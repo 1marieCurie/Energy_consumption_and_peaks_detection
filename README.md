@@ -56,7 +56,6 @@ Les données du projet sont stockées sur Google Drive. **Téléchargez-les et i
 
 **Contenu à télécharger** :
 - `data/` - Dataset complet + métadonnées
-- `Energy consumption and peaks detection/` - Modèles entraînés (.pkl)
 
 
 **Instructions téléchargement** :
