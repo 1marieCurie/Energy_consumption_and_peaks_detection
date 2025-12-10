@@ -28,12 +28,10 @@ Ce projet développe un **système de prédiction de consommation énergétique*
 
 ## Contributeurs
 
-| Nom | 
 
-|------|
-| **MELLAK Khadija** 
-| **ABARKI Aya** | 
-| **BENSAID Malak** |
+- **MELLAK Khadija** 
+- **ABARKI Aya**
+- **BENSAID Malak**
 
 **École** : Ecole Nationale des Sciences Appliquées de Fès (ENSAF)  
 **Filière** : Ingénierie Logicielle et Intelligence Artificielle  
