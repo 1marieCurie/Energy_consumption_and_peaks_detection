@@ -52,8 +52,8 @@ Ce projet développe un **système de prédiction de consommation énergétique*
 1. **Cloner le dépôt**
 
 ```bash
-git clone https://github.com/votre-username/prediction-energetique.git
-cd prediction-energetique
+git clone https://github.com/1marieCurie/Energy_consumption_and_peaks_detection.git
+cd Energy consumption and peaks detection
 ```
 
 2. **Télécharger les données MORED**
@@ -64,7 +64,7 @@ Les données du projet sont stockées sur Google Drive. **Téléchargez-les et i
 
 **Contenu à télécharger** :
 - `data/` - Dataset complet + métadonnées
-- `Projet_ML_Electricity_Consumption/` - Modèles entraînés (.pkl)
+- `Energy consumption and peaks detection/` - Modèles entraînés (.pkl)
 
 
 **Instructions téléchargement** :
@@ -82,7 +82,7 @@ Energy_consumption_and_peaks_detection/
     ├── model_performance.png
     └── ...
 
-│   ├── project_lab.ipynb
+│   ├── project_lab.ipynb # lab principale de projet
 │   ├── Application/
 │       └── app.ipynb #notebook principale de l'application
 │       └── app.py #script généré automatiquement à partir l'exécution de fichier .app.ipynb
