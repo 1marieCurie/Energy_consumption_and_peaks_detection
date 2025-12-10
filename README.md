@@ -181,13 +181,9 @@ Energy_consumption_and_peaks_detection/
 
 ---
 
-## Modèle et Performance
-
-<img src="screens/model_performance.png" alt="Performance des Modèles" width="100%">
-
 ### Approches Testées
 
-<img src="screens/ridge_rfe_performance.png" alt="Ridge + RFE Performance" width="100%">
+<img src="screens/models_performance.png" alt="Performance des Modèles" width="100%">
 
 ### Modèle Final : Ridge + RFE (20 features)
 
