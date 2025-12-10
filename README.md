@@ -1,4 +1,4 @@
-# 🔋 Prédiction de Consommation Énergétique en kWh et Détection des Heures de Pic
+#  Prédiction de Consommation Énergétique en kWh et Détection des Heures de Pic
 
 > **Projet de Machine Learning** | Prédiction intelligente de la consommation électrique des bâtiments résidentiels marocains et détection des heures de pic
 
@@ -38,14 +38,6 @@ Ce projet développe un **système de prédiction de consommation énergétique*
 **Année** : 2024-2025
 
 ---
-
-
-### Prérequis
-
-- Python 3.8 ou supérieur
-- pip (gestionnaire de paquets Python)
-- Git
-- Connexion Internet (pour télécharger les données)
 
 ### Étapes d'installation
 
@@ -92,34 +84,9 @@ Energy_consumption_and_peaks_detection/
 │   └── requierments.txt # fichiers des dépendances à installer
 
 
-
-
-```
-
-3. **Créer un environnement virtuel**
-
-```bash
-python -m venv venv
-source venv/bin/activate  # Sur Windows: venv\Scripts\activate
-```
-
-4. **Installer les dépendances**
-
-```bash
-pip install -r requirements.txt
-```
-
-5. **Vérifier l'installation**
-
-```bash
-python -c "import streamlit; print(f'Streamlit {streamlit.__version__} installé')"
-```
-
-**Important** : A la fin d'exécution, les fichiers `.pkl` seront générés automatiquement par le dernier bloc de code. Sans les fichiers `.pkl` du dossier `Energy_consumption_and_peaks_detection/`, l'application ne pourra pas fonctionner !
-
 ---
 
-## 📖 Utilisation
+## Utilisation
 
 ### Lancer l'Application Streamlit
 
@@ -152,10 +119,10 @@ L'application s'ouvrira automatiquement dans votre navigateur à `http://localho
 
 ---
 
-## 🏗️ Architecture du Projet
+##  Architecture du Projet
 
 ```
-prediction-energetique/
+Energy_consumption_and_peaks_detection/
 ├── app.py                          # Application Streamlit principale
 ├── clean_notebook.ipynb            # Notebook complet (EDA + Entraînement)
 ├── requirements.txt                # Dépendances Python
@@ -174,9 +141,9 @@ prediction-energetique/
 │   └── premises_data/             # Données brutes
 └── screens/
     ├── mored_overview.png         # Présentation dataset MORED
-    ├── model_performance.png      # Comparaison modèles
+    ├── models_performance.png     # Comparaison modèles
+    ├── best_model.png             # modèle avec la meilleur performance
     ├── streamlit_dashboard.png    # Aperçu application
-    ├── prediction_graph.png       # Graphique prédictions
     └── peak_detection.png         # Détection pics
 ```
 
@@ -209,9 +176,9 @@ prediction-energetique/
 
 ### Références
 
-- 📌 [Site officiel MORED](https://moredataset.github.io/MORED/)
-- 📌 [Dépôt GitHub MORED](https://github.com/MOREDataset/MORED)
-- 📄 [Publication scientifique](https://doi.org/10.3390/en13246737)
+- [Site officiel MORED](https://moredataset.github.io/MORED/)
+- [Dépôt GitHub MORED](https://github.com/MOREDataset/MORED)
+- [Publication scientifique](https://doi.org/10.3390/en13246737)
 
 ---
 
@@ -221,33 +188,11 @@ prediction-energetique/
 
 ### Approches Testées
 
-#### 1. **Modèles de Baseline** (Sans features avancées)
-- Ridge Regression : R² = 0.13
-- Random Forest : R² = 0.20
-- LightGBM : R² = 0.21
-
-#### 2. **Modèles Améliorés** (Avec features + lag)
-- Ridge (6 features) : R² = 0.41
-- Random Forest (6 features) : R² = 0.37
-- LightGBM (6 features) : R² = 0.37
-
-#### 3. **Stacking** (Ridge + LightGBM + XGBoost)
-- Résultat : R² ≈ 0.39-0.41 (pas d'amélioration)
-
-#### 4. **LSTM Séquentiel** (168 pas de temps)
-- Résultat : R² = 0.04 (insuffisant)
+<img src="screens/ridge_rfe_performance.png" alt="Ridge + RFE Performance" width="100%">
 
 ### Modèle Final : Ridge + RFE (20 features)
 
-<img src="screens/ridge_rfe_performance.png" alt="Ridge + RFE Performance" width="100%">
-
-| Métrique | Valeur |
-|----------|--------|
-| **R² Test** | 0.9999 |
-| **MAE** | 0.0002 kWh |
-| **RMSE** | 0.0025 kWh |
-| **MAPE** | <0.1% |
-| **Nombre de features** | 20 (sélection optimale) |
+<img src="screens/best_model.png" alt="Ridge + RFE Performance" width="100%">
 
 ### Features Sélectionnées (Top 20)
 
@@ -292,14 +237,6 @@ Les 20 features les plus importantes identifiées par RFE :
 - Visualisation temps réel
 - Comparaison réel vs prédiction
 
-### **Prédiction Précise**
-
-<img src="screens/prediction_graph.png" alt="Graphique Prédictions" width="100%">
-
-- Prédiction par heure ou jour
-- Confiance de prédiction (R²)
-- Erreur moyenne (MAE)
-- Historique des prédictions
 
 ### **Détection de Pics Intelligente**
 
@@ -307,8 +244,10 @@ Les 20 features les plus importantes identifiées par RFE :
 
 - Détection automatique des heures critiques
 - Comparaison pics réels vs prédits
-- Nombre et timing des surcharges
-- Alertes de consommation excessive
+- Prédiction par heure ou jour
+- Confiance de prédiction (R²)
+- Erreur moyenne (MAE)
+- Historique des prédictions
 
 ### **Export des Résultats**
 
@@ -317,18 +256,6 @@ Les 20 features les plus importantes identifiées par RFE :
 - Historique prédictions conservé
 
 ---
-
-## Résultats
-
-### Métriques Globales
-
-| Aspect | Résultat |
-|--------|----------|
-| **Variance expliquée** | 99.99% (R²) |
-| **Erreur absolue moyenne** | 0.0002 kWh |
-| **Pics détectés (accuracy)** | ~85% |
-| **Temps inférence** | <1ms par prédiction |
-| **Mémoire modèle** | ~2 KB |
 
 
 ### Cas d'Usage Validés
@@ -353,26 +280,6 @@ pip install -r requirements.txt
 - Python 3.8, 3.9, 3.10, 3.11
 - Streamlit 1.28+
 - Scikit-learn 1.3+
-
-
-```bash
-# 1. Cloner le dépôt
-git clone https://github.com/votre-username/prediction-energetique.git
-cd prediction-energetique
-
-# 2. Créer environnement virtuel
-python -m venv venv
-source venv/bin/activate
-
-# 3. Installer dépendances
-pip install -r requirements.txt
-
-# 4. Lancer l'application
-streamlit run app.py
-
-# 5. Ouvrir le navigateur
-# → http://localhost:8501
-```
 
 ### Charger vos données
 
@@ -405,25 +312,16 @@ jupyter notebook project_lab.ipynb
 # 6. Sauvegarde modèle final
 
 ```
----
 
-## Licence
-
-Ce projet est sous licence **MIT**. Voir le fichier [LICENSE](LICENSE) pour détails.
-
----
-
-## 🙏 Remerciements
+## Remerciements
 
 - **MORED Dataset** : TICLab UIR et USAID (PVBuild)
 - **Mme Chougrad Hiba** : Enseignante chercheure à ENSA Fès et encadrante de projet
 
----
 
 ## Ressources Supplémentaires
 
-- 📖 [Documentation Streamlit](https://docs.streamlit.io/)
-- 🎓 [Scikit-learn ML Guide](https://scikit-learn.org/)
-- 📊 [MORED Paper](https://doi.org/10.3390/en13246737)
-- 🔬 [Timeseries Forecasting Best Practices](https://machinelearningmastery.com/)
+-  [Documentation Streamlit](https://docs.streamlit.io/)
+-  [Scikit-learn ML Guide](https://scikit-learn.org/)
+-  [Timeseries Forecasting Best Practices](https://machinelearningmastery.com/)
 
