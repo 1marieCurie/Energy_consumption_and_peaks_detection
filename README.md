@@ -28,11 +28,12 @@ Ce projet développe un **système de prédiction de consommation énergétique*
 
 ## Contributeurs
 
-| Nom | Rôle |
-|------|------|
-| **MELLAK Khadija** | Lead Data Scientist & Feature Engineering |
-| **ABARKI Aya** | ML Model Development & Optimization |
-| **BENSAID Malak** | Full Stack (Backend + Streamlit UI) |
+| Nom | 
+
+|------|
+| **MELLAK Khadija** 
+| **ABARKI Aya** | 
+| **BENSAID Malak** |
 
 **École** : Ecole Nationale des Sciences Appliquées de Fès (ENSAF)  
 **Filière** : Ingénierie Logicielle et Intelligence Artificielle  
